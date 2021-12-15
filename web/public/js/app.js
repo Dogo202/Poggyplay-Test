@@ -41,6 +41,8 @@ var app = new Vue({
 			console.log ('logout');
 		},
 		logIn: function () {
+			console.log(1231231231);
+			alert(123);
 			var self= this;
 			if(self.login === ''){
 				self.invalidLogin = true
@@ -57,7 +59,7 @@ var app = new Vue({
 				form.append("login", self.login);
 				form.append("password", self.pass);
 
-				axios.post('/main_page/login', form)
+				axios.post('../main_page/login.php', form)
 					.then(function (response) {
 						if(response.data.user) {
 							location.reload();
